@@ -96,11 +96,11 @@ jobs:
         sudo apt-get -y install libpq-dev
         make install-full install-docs
 
-    - name: Checkout target branch to be able to diff
-      if: github.event_name == 'pull_request'
-      run: |
-        git fetch --depth=1 origin ${{ github.base_ref }}
-        echo "DOCSTRING_DIFF_BRANCH=origin/${{ github.base_ref }}" >> $GITHUB_ENV
+#    - name: Checkout target branch to be able to diff
+#      if: github.event_name == 'pull_request'
+#      run: |
+#        git fetch --depth=1 origin ${{ github.base_ref }}
+#        echo "DOCSTRING_DIFF_BRANCH=origin/${{ github.base_ref }}" >> $GITHUB_ENV
 
     - name: Lint Code 🎎
       run: |
